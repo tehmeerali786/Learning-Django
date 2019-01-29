@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="#">
+
+  {% for pet in pets %}
+
+    <div class="petname">
+
+        <a href="/adoptions/{{pet.id}}">
+
+            <h3>{{ pet.name|capfirst }}</h3>
+        </a>
+
+        <p>{{ pet.name }}</p>
+
+        {% if pet.breed %}
+
+        <p>Breed: {{ pet.breed }}</p>
+
+        {% endif %}
+
+    </div>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
